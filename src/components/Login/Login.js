@@ -14,7 +14,6 @@ function Login() {
     auth
       .signInWithEmailAndPassword(email, password)
       .then(auth => {
-        console.log(auth);
         history.push('/')
       })
       .catch(error => alert(error.message))
@@ -26,8 +25,6 @@ function Login() {
     auth
       .createUserWithEmailAndPassword(email, password)
       .then((auth) => {
-        // console.log(auth);
-
         // it successfully created a new user with email and password
         if (auth) {
           history.push('/')
@@ -41,7 +38,6 @@ function Login() {
       <Link to='/'>
         <img
           className="login__logo"
-          alt="logo"
           src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png'
         />
       </Link>
@@ -62,7 +58,7 @@ function Login() {
         <p>
           By signing-in you agree to the AMAZON FAKE CLONE Conditions of Use & Sale. Please
           see our Privacy Notice, our Cookies Notice and our Interest-Based Ads Notice.
-        </p>
+              </p>
 
         <button onClick={register} className='login__registerButton'>Create your Amazon Account</button>
       </div>

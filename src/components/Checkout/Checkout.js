@@ -4,6 +4,7 @@ import Subtotal from "../Subtotal/Subtotal";
 import { useStateValue } from "../../StateProvider";
 import CheckoutProduct from "../CheckoutProduct/CheckoutProduct";
 
+
 function Checkout() {
   const [{ basket, user }, dispatch] = useStateValue();
 
@@ -22,6 +23,7 @@ function Checkout() {
 
           {basket.map(item => (
             <CheckoutProduct
+              key={item.id}
               id={item.id}
               title={item.title}
               image={item.image}
